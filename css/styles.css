@@ -1,0 +1,74 @@
+:root {
+  font-size: 18px;
+  --gray30: #212121;
+  --gray20: #212429;
+  --gray10: #616161;
+}
+
+body {
+  color: var(--gray30);
+  font-family: Roboto;
+}
+
+a {
+  color: var(--gray30);
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+.content {
+  counter-reset: titleList;
+}
+
+.content h3 {
+  counter-increment: titleList;
+}
+
+.content h3::before {
+  content: counter(titleList, decimal);
+}
+
+.content h3::after {
+  content: '';
+  width: 32px;
+  height: 4px;
+  display: inline-block;
+  background: var(--gray30);
+}
+
+header {
+  font-size: 14px;
+  color: var(--gray10);
+}
+
+header a {
+  color: var(--gray10);
+  text-decoration: none;
+}
+
+header a:hover {
+  color: var(--gray30);
+}
+
+nav details summary {
+  font-weight: bold;
+}
+
+pre {
+  background: #FEC62E;
+}
+
+.hero {
+  background: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url(../images/patron-1.png);
+  height: 350px;
+}
