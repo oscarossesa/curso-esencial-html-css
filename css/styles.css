@@ -5,50 +5,30 @@
   --gray10: #616161;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: var(--gray30);
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
 }
 
 a {
   color: var(--gray30);
 }
 
-h1 {
-  font-size: 60px;
-}
-
-h2 {
-  font-size: 2em;
-}
-
-h3 {
-  font-size: 1.5em;
-}
-
-.content {
-  counter-reset: titleList;
-}
-
-.content h3 {
-  counter-increment: titleList;
-}
-
-.content h3::before {
-  content: counter(titleList, decimal);
-}
-
-.content h3::after {
-  content: '';
-  width: 32px;
-  height: 4px;
-  display: inline-block;
-  background: var(--gray30);
-}
-
 header {
   font-size: 14px;
   color: var(--gray10);
+  margin-top: 20px;
+}
+
+header span {
+  margin: 0 0 16px;
+  line-height: 24px;
+  text-transform: uppercase;
 }
 
 header a {
@@ -62,13 +42,166 @@ header a:hover {
 
 nav details summary {
   font-weight: bold;
+  line-height: 24px;
+}
+
+header li {
+  margin-bottom: 16px;
+}
+
+h1 {
+  font-size: 40px;
+  margin-top: 20px;
+  margin-bottom: 16px;
+  font-weight: normal;
+}
+
+hr {
+  margin: 64px 0;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 64px 0 40px;
+  font-weight: normal;
+}
+
+h3 {
+  font-size: 1.5em;
+  font-weight: normal;
+  margin-top: 16px;
+  margin-bottom: 24px;
+  position: relative;
+  /* top: 0; */
+  /* background: white; */
 }
 
 pre {
   background: #FEC62E;
+  padding: 40px;
+  font-family: 'Roboto';
+  line-height: 24px;
+  overflow: auto;
+}
+
+blockquote {
+  margin: 32px 0;
+  padding-left: 16px;
+  font-size: 24px;
+  line-height: 24px;
+  border-left: 4px solid var(--gray30);
+}
+
+blockquote span {
+  color: var(--gray10);
+}
+
+blockquote span::before {
+  content: '-'
+}
+
+.header-content {
+  padding: 0 20px;
+}
+
+.wrapper {
+  max-width: 902px;
+  /* max-width: 800px; */
+  margin: auto;
+}
+
+.main-content {
+  padding: 0 16px;
+}
+
+.debug {
+  box-shadow: inset 0 0 0 1px red;
+  outline: 1px solid red;
+  background: red;
 }
 
 .hero {
   background: linear-gradient(to top, rgba(255, 255, 255, .3), transparent), url(../images/patron-1.png);
-  height: 350px;
+  height: 50px;
+}
+
+.section-content {
+  counter-reset: titleList;
+  margin-top: 64px;
+}
+
+.section-content:first-of-type {
+  margin: 0;
+}
+
+.section-content ol li {
+  line-height: 24px;
+}
+
+.section-content ul li {
+  margin-bottom: 16px;
+}
+
+.section-content + hr {
+  display: none;
+}
+
+.section-content img {
+  margin-top: 40px;
+}
+
+.section-content h3 {
+  counter-increment: titleList;
+  padding-bottom: 8px;
+}
+
+.section-content h3::before {
+  content: counter(titleList, decimal) '. ';
+}
+
+.section-content h3::after {
+  content: '';
+  width: 80px;
+  height: 4px;
+  display: inline-block;
+  background: var(--gray30);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.responsive {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (min-width: 1366px) {
+  .hero {
+    height: 350px;
+  }
+
+  .header {
+    position: sticky;
+    top: 0;
+  }
+
+  .header-content {
+    position: relative;
+    padding: 0;
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    left: -208px;
+    width: 188px;
+  }
+
+  header span {
+    margin: 10px 0 16px 0;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
 }
