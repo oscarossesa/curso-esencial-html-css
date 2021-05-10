@@ -3,6 +3,8 @@
   --gray30: #212121;
   --gray20: #212429;
   --gray10: #616161;
+  --white: #FFFFFF;
+
 }
 
 html {
@@ -173,6 +175,28 @@ blockquote span::before {
 .responsive {
   width: 100%;
   height: auto;
+}
+
+footer {
+  height: 174px;
+  background: var(--gray20);
+  color: var(--white);
+}
+
+footer p {
+  padding: 48px 0 16px;
+  text-align: center;
+  margin: 0;
+  font-size: 32px;
+}
+
+.redes {
+  text-align: center;
+}
+
+.redes img {
+  width: 18px;
+  height: 18px;
 }
 
 @media screen and (min-width: 1366px) {
